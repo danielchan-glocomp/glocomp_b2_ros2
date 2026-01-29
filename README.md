@@ -9,11 +9,11 @@ https://github.com/Glocomp-Robotics/unitree_ros2
 ### Setup
 Add these lines into the .bashrc file of your robot/ros computer
 
-'''
+```
 source /opt/ros/humble/setup.bash
 source <INSTALLATION PATH>/unitree_ros2/cyclonedds_ws/install/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-'''
+```
 
 This allows your ros environment to read and compile things that uses unitree's sdk
 
