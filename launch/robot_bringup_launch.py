@@ -41,6 +41,12 @@ def generate_launch_description():
             name='clock_pub',
             output='screen'
         ),
-
+        Node(
+            package='glocomp_b2_ros2',
+            executable='cmd_vel_subscriber',
+            name='cmd_vel',
+            output='screen',
+            parameters=[]
+        ),
     ])
 
