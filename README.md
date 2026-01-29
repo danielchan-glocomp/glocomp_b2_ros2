@@ -30,7 +30,10 @@ sudo apt install ros-humble-xacro ros-humble-joint-state-publisher-gui ros-humbl
 
 ## How to run the robot in real world:
 NEVER EVER CHANGE USE_SIM_TIME TO FALSE
->! Explanation only given if salary increment received
+<details>
+    <summary>Spoiler warning</summary>
+> Explanation only given if salary increment received
+</details>
 
 This starts ups the TFs, odom, clock, laserscan and cmd_vel subscriber for the robot:
 ```
