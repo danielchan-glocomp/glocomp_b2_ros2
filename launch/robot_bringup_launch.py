@@ -4,13 +4,13 @@ from launch_ros.actions import Node
 def generate_launch_description():
     return LaunchDescription([
         Node(
-            package='tf_pub',
+            package='glocomp_b2_ros2',
             executable='b2_tf_node',
             name='b2_tf_node',
             output='screen'
         ),
         Node(
-            package='tf_pub',
+            package='glocomp_b2_ros2',
             executable='b2_odom_node',
             name='b2_tf_node',
             output='screen'
