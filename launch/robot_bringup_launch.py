@@ -36,7 +36,7 @@ def generate_launch_description():
             name='pointcloud_to_laserscan'
         ),
         Node(
-            package='tf_pub',
+            package='glocomp_b2_ros2',
             executable='clock_pub',
             name='clock_pub',
             output='screen'
