@@ -3,18 +3,22 @@ All the custom code written for the unitree b2
 
 This package depends on the unitree_ros2 package to interface with their hardware, so remember to install and source their repo
 Here is the glocomp fork of the repo:
+
 https://github.com/Glocomp-Robotics/unitree_ros2
 
 ### Setup
 Add these lines into the .bashrc file of your robot/ros computer
+
 '''
 source /opt/ros/humble/setup.bash
 source <INSTALLATION PATH>/unitree_ros2/cyclonedds_ws/install/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 '''
+
 This allows your ros environment to read and compile things that uses unitree's sdk
 
 Also a specific gotcha to keep in mind is that the /bmsstate message is of type /unitree_interfaces/msg/BmsState, but unitree_ros2 has no such msg, so please use and source the following ros2 package in your environment.(More unitree b2 specific odities still to be found)
+
 https://github.com/Glocomp-Robotics/unitree_interfaces
 
 ### ROS Dependencies
