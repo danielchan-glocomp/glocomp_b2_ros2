@@ -126,12 +126,6 @@ ekf_filter_node:
         # the thresholds.
         odom0_pose_rejection_threshold: 5.0
         odom0_twist_rejection_threshold: 1.0
-        odom0_twist_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.01]
 
 
         twist0: /cmd_vel
@@ -155,12 +149,18 @@ ekf_filter_node:
         imu0_pose_rejection_threshold: 0.8                 # Note the difference in parameter names
         imu0_twist_rejection_threshold: 0.8                #
         imu0_linear_acceleration_rejection_threshold: 0.8  #
-        imu0_twist_covariance: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.01, 0.0, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.01, 0.0,
-                                0.0, 0.0, 0.0, 0.0, 0.0, 0.01]
+        imu0_pose_covariance: [0.1, 0.0, 0.0, 0.0, 0.0, 0.0,
+                       0.0, 0.1, 0.0, 0.0, 0.0, 0.0,
+                       0.0, 0.0, 0.1, 0.0, 0.0, 0.0,
+                       0.0, 0.0, 0.0, 0.01, 0.0, 0.0,
+                       0.0, 0.0, 0.0, 0.0, 0.01, 0.0,
+                       0.0, 0.0, 0.0, 0.0, 0.0, 0.01]
+        imu0_twist_covariance: [0.1, 0.0, 0.0, 0.0, 0.0, 0.0,
+                       0.0, 0.1, 0.0, 0.0, 0.0, 0.0,
+                       0.0, 0.0, 0.1, 0.0, 0.0, 0.0,
+                       0.0, 0.0, 0.0, 0.01, 0.0, 0.0,
+                       0.0, 0.0, 0.0, 0.0, 0.01, 0.0,
+                       0.0, 0.0, 0.0, 0.0, 0.0, 0.01]
 
 
         # [ADVANCED] Some IMUs automatically remove acceleration due to gravity, and others don't. If yours doesn't, please set
