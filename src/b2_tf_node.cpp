@@ -97,7 +97,7 @@ private:
     geometry_msgs::msg::TransformStamped t3;
     t3.header.stamp = stamp;
     t3.header.frame_id = "robot_center";
-    t3.child_frame_id = "imu_link";
+    t3.child_frame_id = "dog_imu_link";
     t3.transform.translation.x = 0;
     t3.transform.translation.y = 0;
     //t2.transform.translation.z = -t.transform.translation.z;
