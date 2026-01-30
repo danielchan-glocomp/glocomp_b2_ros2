@@ -57,11 +57,31 @@ private:
     odom.pose.pose.orientation.y = msg->imu_state.quaternion[2];
     odom.pose.pose.orientation.z = msg->imu_state.quaternion[3];
     odom.pose.pose.orientation.w = msg->imu_state.quaternion[0];
+    // Random covariance
+    odom.pose.covariance = {
+      0.05, 0,    0,    0,    0,    0,
+      0,    0.05, 0,    0,    0,    0,
+      0,    0,    0.1,  0,    0,    0,
+      0,    0,    0,    0.1,  0,    0,
+      0,    0,    0,    0,    0.1,  0,
+      0,    0,    0,    0,    0,    0.05
+    };
+
 
     odom.twist.twist.linear.x = msg->velocity[0];
     odom.twist.twist.linear.y = msg->velocity[1];
     odom.twist.twist.linear.z = msg->velocity[2];
     odom.twist.twist.angular.z = msg->yaw_speed;
+    // Randome covariance
+    odom.twist.covariance = {
+      0.1, 0,   0,   0,   0,   0,
+      0,   0.1, 0,   0,   0,   0,
+      0,   0,   0.1, 0,   0,   0,
+      0,   0,   0,   0.1, 0,   0,
+      0,   0,   0,   0,   0.1, 0,
+      0,   0,   0,   0,   0,   0.1
+    };
+
 
     // Send the transformation
     odom_pub_->publish(odom);
