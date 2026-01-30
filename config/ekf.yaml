@@ -149,8 +149,15 @@ ekf_filter_node:
         imu0_pose_rejection_threshold: 0.8                 # Note the difference in parameter names
         imu0_twist_rejection_threshold: 0.8                #
         imu0_linear_acceleration_rejection_threshold: 0.8  #
-        imu0_pose_covariance_diagonal: [0.0, 0.0, 0.0, 0.01, 0.01, 0.01]
-        imu0_twist_covariance_diagonal: [0.0, 0.0, 0.0, 0.01, 0.01, 0.01]
+        imu0_orientation_covariance: [0.01, 0, 0,
+                                0, 0.01, 0,
+                                0, 0, 0.01]  # <- must be nonzero
+        imu0_angular_velocity_covariance: [0.02, 0, 0,
+                                        0, 0.02, 0,
+                                        0, 0, 0.02]
+        imu0_linear_acceleration_covariance: [0.1, 0, 0,
+                                        0, 0.1, 0,
+                                        0, 0, 0.1]
 
 
         # [ADVANCED] Some IMUs automatically remove acceleration due to gravity, and others don't. If yours doesn't, please set
