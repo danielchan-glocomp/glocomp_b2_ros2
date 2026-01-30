@@ -144,6 +144,21 @@ ekf_filter_node:
         # this to true, and *make sure* your data conforms to REP-103, specifically, that the data is in ENU frame.
         imu0_remove_gravitational_acceleration: true
 
+        imu0_orientation_covariance:
+                                    [0.02, 0,    0,
+                                    0,    0.02, 0,
+                                    0,    0,    0.05]
+
+        imu0_angular_velocity_covariance:
+                                    [0.01, 0,    0,
+                                    0,    0.01, 0,
+                                    0,    0,    0.02]
+
+        imu0_linear_acceleration_covariance:
+                                    [0.3, 0,   0,
+                                    0,   0.3, 0,
+                                    0,   0,   0.5]
+
         # [ADVANCED]  The EKF and UKF models follow a standard predict/correct cycle. During prediction, if there is no
         # acceleration reference, the velocity at time t+1 is simply predicted to be the same as the velocity at time t. During
         # correction, this predicted value is fused with the measured value to produce the new velocity estimate. This can be
