@@ -36,7 +36,7 @@ ekf_filter_node:
         debug: true
 
         # Defaults to "robot_localization_debug.txt" if unspecified. Please specify the full path.
-        debug_out_file: /path/to/debug/file.txt
+        debug_out_file: /home/unitree/file.txt
 
         # Whether we'll allow old measurements to cause a re-publication of the updated state
         permit_corrected_publication: false
