@@ -44,19 +44,19 @@ private:
   void handle_tf(const std::shared_ptr<unitree_go::msg::SportModeState> msg)
   {
     // Create the odom -> "Base link" transform, will not elaborate
-    geometry_msgs::msg::TransformStamped t;
-    t.header.stamp = stamp;
-    t.header.frame_id = "odom";
-    t.child_frame_id = "robot_center";
-    t.transform.translation.x = msg->position[0];
-    t.transform.translation.y = msg->position[1];
-    t.transform.translation.z = msg->position[2];
-    t.transform.rotation.x = msg->imu_state.quaternion[1];
-    t.transform.rotation.y = msg->imu_state.quaternion[2];
-    t.transform.rotation.z = msg->imu_state.quaternion[3];
-    t.transform.rotation.w = msg->imu_state.quaternion[0];
-    // Send the transformation
-    tf_broadcaster_->sendTransform(t);
+    // geometry_msgs::msg::TransformStamped t;
+    // t.header.stamp = stamp;
+    // t.header.frame_id = "odom";
+    // t.child_frame_id = "robot_center";
+    // t.transform.translation.x = msg->position[0];
+    // t.transform.translation.y = msg->position[1];
+    // t.transform.translation.z = msg->position[2];
+    // t.transform.rotation.x = msg->imu_state.quaternion[1];
+    // t.transform.rotation.y = msg->imu_state.quaternion[2];
+    // t.transform.rotation.z = msg->imu_state.quaternion[3];
+    // t.transform.rotation.w = msg->imu_state.quaternion[0];
+    // // Send the transformation
+    // tf_broadcaster_->sendTransform(t);
 
     // Salary increment?
     geometry_msgs::msg::TransformStamped t1;
