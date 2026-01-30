@@ -43,7 +43,7 @@ private:
 
   void handle_tf(const std::shared_ptr<unitree_go::msg::SportModeState> msg)
   {
-    Create the odom -> "Base link" transform, will not elaborate
+    // Create the odom -> "Base link" transform, will not elaborate
     geometry_msgs::msg::TransformStamped t;
     t.header.stamp = stamp;
     t.header.frame_id = "odom";
