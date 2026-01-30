@@ -93,6 +93,24 @@ private:
     // Send the transformation
     tf_broadcaster_->sendTransform(t2);
 
+    // imu_link
+    geometry_msgs::msg::TransformStamped t3;
+    t3.header.stamp = stamp;
+    t3.header.frame_id = "robot_center";
+    t3.child_frame_id = "imu_link";
+    t3.transform.translation.x = 0;
+    t3.transform.translation.y = 0;
+    //t2.transform.translation.z = -t.transform.translation.z;
+    t3.transform.translation.z = 0;
+    tf2::Quaternion q3;
+    q3.setRPY(0, 0, 0);
+    t3.transform.rotation.x = q3.x();
+    t3.transform.rotation.y = q3.y();
+    t3.transform.rotation.z = q3.z();
+    t3.transform.rotation.w = q3.w();
+    // Send the transformation
+    tf_broadcaster_->sendTransform(t3);
+
 
   }
   builtin_interfaces::msg::Time stamp;
