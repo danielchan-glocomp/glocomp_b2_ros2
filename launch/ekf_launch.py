@@ -30,6 +30,7 @@ def generate_launch_description():
             executable='ekf_node',
             name='ekf_filter_node',
             output='screen',
-            parameters=[os.path.join(get_package_share_directory("glocomp_b2_ros2"), 'config', 'ekf.yaml')],
+            parameters=[os.path.join(get_package_share_directory("glocomp_b2_ros2"), 'config', 'ekf.yaml'),
+                        {'use_sim_time': 'true' }],
            ),
 ])
