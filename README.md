@@ -48,7 +48,7 @@ ros2 launch unitree_b2_ros2 cam_launch.py
 ## How to bring up slam for the robot:
 This here brings up the slammer for the robot
 ```
-ros2 launch unitree_b2_ros2 slam_launch.py
+ros2 launch glocomp_b2_ros2 slam_launch.py
 ```
 
 Move the robot using:
@@ -59,13 +59,13 @@ Or whatever you feel like
 
 ## Localization
 ```
-ros2 launch unitree_b2_ros2 localization_launch.py map:="PATH TO YOUR MAP.yaml"
+ros2 launch glocomp_b2_ros2 localization_launch.py map:="PATH TO YOUR MAP.yaml"
 ```
 
 Open another terminal
 Navigation
 ```
-ros2 launch unitree_b2_ros2 navigation_launch.py use_sim_time:=true/false
+ros2 launch glocomp_b2_ros2 navigation_launch.py
 ```
 
 
