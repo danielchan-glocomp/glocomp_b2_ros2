@@ -51,6 +51,11 @@ This here brings up the slammer for the robot
 ros2 launch glocomp_b2_ros2 slam_launch.py
 ```
 
+Save the map using
+```
+ros2 run nav2_map_server map_saver_cli -f "MAP NAME"
+```
+
 Move the robot using:
 ```
 ros2 run teleop_twist_joy teleop_twist_joy
