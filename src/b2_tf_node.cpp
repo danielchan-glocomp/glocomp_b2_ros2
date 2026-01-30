@@ -51,10 +51,16 @@ private:
     t.transform.translation.x = msg->position[0];
     t.transform.translation.y = msg->position[1];
     t.transform.translation.z = msg->position[2];
-    t.transform.rotation.x = msg->imu_state.quaternion[1];
-    t.transform.rotation.y = msg->imu_state.quaternion[2];
-    t.transform.rotation.z = msg->imu_state.quaternion[3];
-    t.transform.rotation.w = msg->imu_state.quaternion[0];
+    tf2::Quaternion q;
+    q.setX(msg->imu_state.quaternion[1]);
+    q.setY(msg->imu_state.quaternion[2]);
+    q.setZ(msg->imu_state.quaternion[3]);
+    q.setW(msg->imu_state.quaternion[0]);
+    q.normalize();
+    t.transform.rotation.x = q.x();
+    t.transform.rotation.y = q.y();
+    t.transform.rotation.z = q.z();
+    t.transform.rotation.w = q.w();
     // Send the transformation
     tf_broadcaster_->sendTransform(t);
 
