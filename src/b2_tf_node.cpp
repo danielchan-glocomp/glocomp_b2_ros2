@@ -82,7 +82,8 @@ private:
     t2.child_frame_id = "base_footprint";
     t2.transform.translation.x = 0;
     t2.transform.translation.y = 0;
-    t2.transform.translation.z = -t.transform.translation.z;
+    //t2.transform.translation.z = -t.transform.translation.z;
+    t2.transform.translation.z = 0;
     tf2::Quaternion q2;
     q2.setRPY(0, 0, 0);
     t2.transform.rotation.x = q2.x();
