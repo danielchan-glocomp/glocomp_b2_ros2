@@ -37,12 +37,12 @@ NEVER EVER CHANGE USE_SIM_TIME TO FALSE
 
 This starts ups the TFs, odom, clock, laserscan and cmd_vel subscriber for the robot:
 ```
-ros2 launch unitree_b2_ros2 robot_bringup_launch.py
+ros2 launch glocomp_b2_ros2 robot_bringup_launch.py
 ```
 
 This starts the camera republishers(Gave up trying to read the unitree videostream)
 ```
-ros2 launch unitree_b2_ros2 cam_launch.py
+ros2 launch glocomp_b2_ros2 cam_launch.py
 ```
 
 ## How to bring up slam for the robot:
