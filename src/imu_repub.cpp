@@ -24,7 +24,7 @@ private:
     {
         (void)msg;  // We don't need the message content, just trigger on reception
         
-        sensor_msgs::msg::Imu repub_imu = msg;
+        sensor_msgs::msg::Imu repub_imu = *msg;
         repub_imu.orientation_covariance = {
                                             0.0004, 0.0,    0.0,
                                             0.0,    0.0004, 0.0,
