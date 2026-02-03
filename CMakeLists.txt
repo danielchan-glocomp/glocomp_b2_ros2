@@ -86,6 +86,13 @@ ament_target_dependencies(
     rosgraph_msgs
 )
 
+add_executable(imu_repub src/imu_repub.cpp)
+ament_target_dependencies(
+    imu_repub
+    rclcpp
+    sensor_msgs
+)
+
 add_executable(cmd_vel_subscriber src/cmd_vel_subscriber.cpp src/common/ros2_sport_client.cpp)
 target_compile_features(cmd_vel_subscriber PRIVATE cxx_std_20)
 ament_target_dependencies(cmd_vel_subscriber ${DEPENDENCY_LIST})
@@ -107,6 +114,7 @@ install(TARGETS
     b2_tf_node
     b2_odom_node
     clock_pub
+    imu_repub
     DESTINATION lib/${PROJECT_NAME})
 
 install(
