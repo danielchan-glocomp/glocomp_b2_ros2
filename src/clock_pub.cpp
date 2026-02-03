@@ -33,7 +33,7 @@ private:
         clock_msg.clock = now;
         clock_pub_->publish(clock_msg);
 
-        RCLCPP_INFO(this->get_logger(), "Published /clock: %u.%u", now.sec, now.nanosec);
+        RCLCPP_INFO(this->get_logger(), "Published /clock: %u.%u", clock_msg.clock.sec, clock_msg.clock.nanosec);
     }
 
     rclcpp::Publisher<rosgraph_msgs::msg::Clock>::SharedPtr clock_pub_;
