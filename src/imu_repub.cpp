@@ -4,7 +4,7 @@
 class ImuRepublisherNode : public rclcpp::Node
 {
 public:
-    ClockPublisherNode() : Node("imu_republisher_node")
+    ImuPublisherNode() : Node("imu_republisher_node")
     {
         // Publisher for /imu
         imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("/imu", 10);
@@ -13,7 +13,7 @@ public:
         sub_ = this->create_subscription<sensor_msgs::msg::Imu>(
             "/dog_imu_raw",
             10,
-            std::bind(&ClockPublisherNode::topic_callback, this, std::placeholders::_1)
+            std::bind(&ImuPublisherNode::topic_callback, this, std::placeholders::_1)
         );
 
         RCLCPP_INFO(this->get_logger(), "LidarRepublisherNode started.");
@@ -43,14 +43,14 @@ private:
         lidar_pub_->publish(repub_imu);
 
     }
-
+    rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_pub_;
 };
 
 int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<ImuRepublisherNode>();
+    auto node = std::make_shared<ImuPublisherNode>();
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
