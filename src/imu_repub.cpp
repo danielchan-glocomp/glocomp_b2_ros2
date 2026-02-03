@@ -40,7 +40,7 @@ private:
                                             0.0,    0.0,    0.0006};
 
         // Publish it as /imu
-        lidar_pub_->publish(repub_imu);
+        imu_pub_->publish(repub_imu);
 
     }
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_;
