@@ -1,7 +1,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/imu.hpp"
 
-class ImuRepublisherNode : public rclcpp::Node
+class ImuPublisherNode : public rclcpp::Node
 {
 public:
     ImuPublisherNode() : Node("imu_republisher_node")
