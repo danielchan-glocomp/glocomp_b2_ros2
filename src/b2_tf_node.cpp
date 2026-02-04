@@ -44,30 +44,30 @@ private:
   void handle_tf(const std::shared_ptr<unitree_go::msg::SportModeState> msg)
   {
     // Create the odom -> "Base link" transform, will not elaborate
-    geometry_msgs::msg::TransformStamped t;
-    t.header.stamp = stamp;
-    t.header.frame_id = "odom";
-    t.child_frame_id = "robot_center";
-    t.transform.translation.x = msg->position[0];
-    t.transform.translation.y = msg->position[1];
-    t.transform.translation.z = msg->position[2];
-    tf2::Quaternion q;
-    q.setX(msg->imu_state.quaternion[1]);
-    q.setY(msg->imu_state.quaternion[2]);
-    q.setZ(msg->imu_state.quaternion[3]);
-    q.setW(msg->imu_state.quaternion[0]);
-    q.normalize();
-    t.transform.rotation.x = q.x();
-    t.transform.rotation.y = q.y();
-    t.transform.rotation.z = q.z();
-    t.transform.rotation.w = q.w();
-    // Send the transformation
-    tf_broadcaster_->sendTransform(t);
+    // geometry_msgs::msg::TransformStamped t;
+    // t.header.stamp = stamp;
+    // t.header.frame_id = "odom";
+    // t.child_frame_id = "base_link";
+    // t.transform.translation.x = msg->position[0];
+    // t.transform.translation.y = msg->position[1];
+    // t.transform.translation.z = msg->position[2];
+    // tf2::Quaternion q;
+    // q.setX(msg->imu_state.quaternion[1]);
+    // q.setY(msg->imu_state.quaternion[2]);
+    // q.setZ(msg->imu_state.quaternion[3]);
+    // q.setW(msg->imu_state.quaternion[0]);
+    // q.normalize();
+    // t.transform.rotation.x = q.x();
+    // t.transform.rotation.y = q.y();
+    // t.transform.rotation.z = q.z();
+    // t.transform.rotation.w = q.w();
+    // // Send the transformation
+    // tf_broadcaster_->sendTransform(t);
 
     // Salary increment?
     geometry_msgs::msg::TransformStamped t1;
     t1.header.stamp = stamp;
-    t1.header.frame_id = "robot_center";
+    t1.header.frame_id = "base_link";
     t1.child_frame_id = "rslidar";
     t1.transform.translation.x = 0;
     t1.transform.translation.y = 0;
@@ -84,7 +84,7 @@ private:
     // Lol
     geometry_msgs::msg::TransformStamped t2;
     t2.header.stamp = stamp;
-    t2.header.frame_id = "robot_center";
+    t2.header.frame_id = "base_link";
     t2.child_frame_id = "base_footprint";
     t2.transform.translation.x = 0;
     t2.transform.translation.y = 0;
@@ -102,7 +102,7 @@ private:
     // imu_link
     geometry_msgs::msg::TransformStamped t3;
     t3.header.stamp = stamp;
-    t3.header.frame_id = "robot_center";
+    t3.header.frame_id = "base_link";
     t3.child_frame_id = "dog_imu_link";
     t3.transform.translation.x = 0;
     t3.transform.translation.y = 0;

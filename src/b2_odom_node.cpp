@@ -21,7 +21,7 @@ public:
   {
     // Initialize the odom publisher
     odom_pub_ = this->create_publisher<nav_msgs::msg::Odometry>(
-        "/odom",10);
+        "/odom/raw",10);
 
     // Lol
     time_sub = this->create_subscription<nav_msgs::msg::Odometry>(
@@ -47,7 +47,7 @@ private:
     odom.header.stamp = stamp;
 
     odom.header.frame_id = "odom";
-    odom.child_frame_id = "robot_center";
+    odom.child_frame_id = "base_link";
 
     odom.pose.pose.position.x = msg->position[0];
     odom.pose.pose.position.y = msg->position[1];
