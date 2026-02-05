@@ -39,6 +39,11 @@ This starts ups the TFs, odom, clock, laserscan and cmd_vel subscriber for the r
 ```
 ros2 launch glocomp_b2_ros2 robot_bringup_launch.py
 ```
+### Temporary edit ###
+Run this command to get the 3D odom and TF(dddmr_navigation required)
+```
+ros2 run dddmr_odom_3d odom_3d --ros-args -p odom_topic:="/odom/raw" -p imu_topic:="/dog_imu_raw" -p use_sim_time:=true
+```
 
 This starts the camera republishers(Gave up trying to read the unitree videostream)
 ```
